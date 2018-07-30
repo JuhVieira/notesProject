@@ -1,0 +1,38 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>{{ title }}</ion-title>
+    <button [hidden] = "!note.id" ion-button clear (click)="remove()">
+      <ion-icon name="trash"></ion-icon>
+  </button>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <form class="form" [formGroup]="form">
+    <ion-item>
+      <ion-label stacked> Titulo </ion-label>
+      <ion-input type="text" required [formControl]="form.controls['title']" value="{{ note.title }}"> </ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label stacked>Descrição</ion-label>
+      <ion-input type="text" required [formControl]="form.controls['description']" value="{{ note.description }}"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Data de Vencimento</ion-label>
+      <ion-datetime  displayFormat="MMM DD, YYYY HH:mm:ss.m" [(ngModel)]="myDate" required [formControl]="form.controls['expiring_date']"></ion-datetime>
+    </ion-item>
+  </form>
+
+
+</ion-content>
+
+<ion-footer>
+  <button ion-button large block [disabled] = "!form.valid" (click)="onSubmit()">Salvar</button>
+</ion-footer>

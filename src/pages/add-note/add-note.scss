@@ -1,0 +1,35 @@
+page-add-note {
+    ion-header{
+        ion-navbar{
+            .toolbar-content{
+                display: flex;
+                button{
+                    color: #000 !important;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+    ion-content{
+        background-color: #fff5cb !important;
+        .form{
+            background-color: #fff6d4 !important;
+            height: 100%;
+            padding: 16px;
+            ion-item{
+                background-color:  transparent !important;
+                ion-label{
+                    font-size: 16px !important;
+                    color: #000 !important;
+                }
+            }
+        }
+    }
+
+    ion-footer{
+        button{
+            margin: 0 !important;
+        }
+        
+    }
+}
